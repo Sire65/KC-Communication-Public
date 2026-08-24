@@ -1,0 +1,12 @@
+{
+  "app": "KC Communication",
+  "version": "0.2.1",
+  "channel": "public",
+  "publishedAt": "2026-08-24T09:55:00+02:00",
+  "mandatory": false,
+  "packageReady": true,
+  "installMode": "web-reload",
+  "rollbackVersion": "0.2.1",
+  "notes": "Öffentliche Laufversion mit Anmeldung, Geräte-/Push-Registrierung, Test-Push, Verbindungsstatus und Update-Erkennung.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.2.1"
+}
