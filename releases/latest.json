@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "channel": "public",
-  "publishedAt": "2026-08-24T18:45:00+02:00",
+  "publishedAt": "2026-08-24T20:57:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.4.5",
+  "rollbackVersion": "0.4.6",
   "estimatedInstallSeconds": 4,
-  "notes": "Reines Dashboard-/Tablet-Upgrade ohne Funktionsabbau: kompaktere professionelle Informationsarchitektur, flache Programm- und Providerleiste, acht kleine KPIs, Kanal-Torte, Programm-Balken, Status-Balken, Provider-Monitor und kompakte Ereignisliste. Bestehende Providerlogik, Brevo/Resend, Push-Gerätenamen, 10 Funktionstests, Rundinstrumente, Update-System sowie IDX/SUP/PUSH bleiben erhalten.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.6"
+  "notes": "Aussagekräftigeres Tablet-Dashboard ohne Funktionsabbau: 24h-Verlauf mit OK-/Fehlermarkern, getrennte E-Mail- und Push-Kennzahlen, Queue/Retry, letzter erfolgreicher Versand und letzter Fehler, Provider-Bereitschaft sowie Erfolgs-/Warn-/Fehleranteile pro Programm. Bestehende Rundinstrumente, 10 Tests, Providerlogik, Brevo/Resend, Push-Gerätenamen, Update-System und IDX/SUP/PUSH bleiben erhalten.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.7"
 }
