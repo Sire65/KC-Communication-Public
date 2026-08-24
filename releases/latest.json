@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "channel": "public",
-  "publishedAt": "2026-08-24T11:40:00+02:00",
+  "publishedAt": "2026-08-24T11:48:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.3.0",
-  "estimatedInstallSeconds": 12,
-  "notes": "Updateanzeige mit Fortschrittsbalken, Prozentwert, Restzeit, Installationsschritten und sichtbarer Abschlussprüfung.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.3.1"
+  "rollbackVersion": "0.3.1",
+  "estimatedInstallSeconds": 6,
+  "notes": "Stabile Laufversion ohne Update-Endlosschleife. Update-Fortschritt ist direkt in der Hauptanwendung integriert.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.3.2"
 }
