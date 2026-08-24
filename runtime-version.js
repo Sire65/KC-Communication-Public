@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const RUNTIME='0.3.1';
-const paint=()=>document.querySelectorAll('.appVersion').forEach(x=>x.textContent=RUNTIME);
-paint();new MutationObserver(paint).observe(document.body,{childList:true,subtree:true});
+const paint=()=>document.querySelectorAll('.appVersion').forEach(x=>{if(x.textContent!==RUNTIME)x.textContent=RUNTIME});
+paint();new MutationObserver(()=>paint()).observe(document.body,{childList:true,subtree:true});
 const prev=window.fetch.bind(window);
 window.fetch=async(...args)=>{const u=String(args[0]?.url||args[0]||'');const r=await prev(...args);if(!u.includes('releases/latest.json'))return r;try{const m=await r.clone().json(),cmp=(a,b)=>{const A=String(a).split('.').map(Number),B=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((A[i]||0)!==(B[i]||0))return (A[i]||0)-(B[i]||0)}return 0};if(cmp(m.version,RUNTIME)<=0){m.version='0.2.1';m.notes='KC Communication '+RUNTIME+' ist als Laufzeit-Erweiterung aktiv.';return new Response(JSON.stringify(m),{status:r.status,headers:{'content-type':'application/json','cache-control':'no-store'}})}}catch{}return r};
 function ensureOverlay(){let o=document.getElementById('kcUpdateProgress');if(o)return o;o=document.createElement('div');o.id='kcUpdateProgress';o.innerHTML='<div class="kc-up-card"><div class="kc-up-logo">👨‍🍳</div><h2>KC Communication wird aktualisiert</h2><div id="kcUpVersion" class="kc-up-sub">Update wird vorbereitet …</div><div class="kc-up-track"><div id="kcUpBar" class="kc-up-bar"></div></div><div class="kc-up-row"><strong id="kcUpPct">0 %</strong><span id="kcUpEta">ca. 10–15 Sekunden</span></div><div id="kcUpStep" class="kc-up-step">Vorbereitung</div><div class="kc-up-note">Bitte dieses Fenster während des Updates nicht schließen.</div></div>';
