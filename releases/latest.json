@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "channel": "public",
-  "publishedAt": "2026-08-24T16:50:00+02:00",
+  "publishedAt": "2026-08-24T17:05:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.3.3",
-  "estimatedInstallSeconds": 6,
-  "notes": "Neues Live-Dashboard mit Programm-LEDs, Versandstatistik, Kanal-/Programm-Auswertung, Provider-/Failover-Status, echtem Traffic und verbesserter Programmansicht einschließlich PC Backup Vault-Erkennung.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.0"
+  "rollbackVersion": "0.4.0",
+  "estimatedInstallSeconds": 4,
+  "notes": "Stabile Laufversion: Update-Endlosschleife behoben. Neues Dashboard ist jetzt fest in der gestarteten Anwendung eingebaut und bleibt nach dem Start aktiv.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.1"
 }
