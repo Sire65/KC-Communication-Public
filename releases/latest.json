@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "channel": "public",
-  "publishedAt": "2026-08-24T18:25:00+02:00",
+  "publishedAt": "2026-08-24T18:45:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.4.4",
+  "rollbackVersion": "0.4.5",
   "estimatedInstallSeconds": 4,
-  "notes": "IndexedDB-Downgradefehler beseitigt: lokale Datenbank wird ohne feste Versionsnummer geöffnet. Die Geschwindigkeitsdiagnose mit zwei Rundinstrumenten für IDX, SUP und PUSH ist wiederhergestellt; die 10 erweiterten Funktions- und Sicherheitstests bleiben zusätzlich erhalten. Dashboard-Grafiken, Brevo als Primary, Resend als deaktivierte Reserve, kompakte LEDs und verständliche Push-Gerätenamen bleiben unverändert erhalten.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.5"
+  "notes": "Reines Dashboard-/Tablet-Upgrade ohne Funktionsabbau: kompaktere professionelle Informationsarchitektur, flache Programm- und Providerleiste, acht kleine KPIs, Kanal-Torte, Programm-Balken, Status-Balken, Provider-Monitor und kompakte Ereignisliste. Bestehende Providerlogik, Brevo/Resend, Push-Gerätenamen, 10 Funktionstests, Rundinstrumente, Update-System sowie IDX/SUP/PUSH bleiben erhalten.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.6"
 }
