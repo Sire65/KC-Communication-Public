@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "channel": "public",
-  "publishedAt": "2026-08-24T18:05:00+02:00",
+  "publishedAt": "2026-08-24T18:25:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.4.3",
+  "rollbackVersion": "0.4.4",
   "estimatedInstallSeconds": 4,
-  "notes": "Regression-Fix: Dashboard-Grafiken und kompakte KPIs erhalten; Brevo wieder Primary und aktiv, Resend nur inaktive Reserve; exakt drei Status-LEDs mit je einer kleinen gelben Traffic-LED ohne doppelten Traffic-Text; Push-Geräte zeigen verständliche Gerätenamen statt technischer UUIDs; 10 erweiterte Tests bleiben erhalten.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.4"
+  "notes": "IndexedDB-Downgradefehler beseitigt: lokale Datenbank wird ohne feste Versionsnummer geöffnet. Die Geschwindigkeitsdiagnose mit zwei Rundinstrumenten für IDX, SUP und PUSH ist wiederhergestellt; die 10 erweiterten Funktions- und Sicherheitstests bleiben zusätzlich erhalten. Dashboard-Grafiken, Brevo als Primary, Resend als deaktivierte Reserve, kompakte LEDs und verständliche Push-Gerätenamen bleiben unverändert erhalten.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.5"
 }
