@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "channel": "public",
-  "publishedAt": "2026-08-24T12:00:00+02:00",
+  "publishedAt": "2026-08-24T16:50:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.3.2",
+  "rollbackVersion": "0.3.3",
   "estimatedInstallSeconds": 6,
-  "notes": "Aussagekräftigere Diagnose mit getrennten Messwerten, optimierter Programmansicht, Version/Client/letztem Nachrichtentransfer, Details/Testbuttons und exakt runden gelben Traffic-LEDs.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.3.3"
+  "notes": "Neues Live-Dashboard mit Programm-LEDs, Versandstatistik, Kanal-/Programm-Auswertung, Provider-/Failover-Status, echtem Traffic und verbesserter Programmansicht einschließlich PC Backup Vault-Erkennung.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.0"
 }
