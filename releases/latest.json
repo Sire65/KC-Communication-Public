@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "channel": "public",
-  "publishedAt": "2026-08-24T20:57:00+02:00",
+  "publishedAt": "2026-08-25T06:29:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.4.6",
+  "rollbackVersion": "0.4.7",
   "estimatedInstallSeconds": 4,
-  "notes": "Aussagekräftigeres Tablet-Dashboard ohne Funktionsabbau: 24h-Verlauf mit OK-/Fehlermarkern, getrennte E-Mail- und Push-Kennzahlen, Queue/Retry, letzter erfolgreicher Versand und letzter Fehler, Provider-Bereitschaft sowie Erfolgs-/Warn-/Fehleranteile pro Programm. Bestehende Rundinstrumente, 10 Tests, Providerlogik, Brevo/Resend, Push-Gerätenamen, Update-System und IDX/SUP/PUSH bleiben erhalten.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.7"
+  "notes": "Neue Registerkarte Senden: Push und E-Mail manuell verfassen, Push+E-Mail gleichzeitig oder einzeln versenden, Empfänger als alle, Gruppen oder einzelne Mitglieder auswählen. Lokaler Terminplaner mit Wiederaufnahme überfälliger Sendungen beim nächsten Öffnen. Obere Verbindungsanzeige bereinigt: je Weg genau eine Status-LED (grün/rot/blau) und darunter genau eine gelbe Traffic-LED. Dashboard, Rundinstrumente und 10 Tests bleiben erhalten.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/?v=0.4.8"
 }
