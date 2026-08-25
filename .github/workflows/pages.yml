@@ -24,43 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build enhanced public site
+      - name: Build public site without wrappers
         shell: bash
         run: |
           rm -rf _site
           mkdir -p _site
           rsync -a --exclude '.git' --exclude '_site' ./ _site/
-          mv _site/index.html _site/legacy.html
-          cat > _site/index.html <<'EOF'
-          <!doctype html>
-          <html lang="de">
-          <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width,initial-scale=1">
-            <meta name="theme-color" content="#741521">
-            <title>KC Communication 0.4.0</title>
-            <style>html,body,#kcframe{width:100%;height:100%;margin:0;border:0;display:block;background:#f6f2ec}</style>
-          </head>
-          <body>
-            <iframe id="kcframe" src="./legacy.html?v=0.4.0" title="KC Communication"></iframe>
-            <script>
-              const f=document.getElementById('kcframe');
-              f.addEventListener('load',()=>{
-                try{
-                  const d=f.contentDocument;
-                  if(!d) return;
-                  d.querySelectorAll('.appVersion').forEach(x=>x.textContent='0.4.0');
-                  const s=d.createElement('script');
-                  s.id='kcx-enhancer';
-                  s.src='./console.js?v=0.4.0';
-                  d.body.appendChild(s);
-                  setTimeout(()=>d.querySelectorAll('.appVersion').forEach(x=>x.textContent='0.4.0'),300);
-                }catch(e){console.error('KC enhancer could not be loaded',e);}
-              });
-            </script>
-          </body>
-          </html>
-          EOF
+          test -f _site/index.html
+          test -f _site/v1/index.html
+          test -f _site/v1/kc-v1-update.js
+          test -f _site/releases/latest.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
