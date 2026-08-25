@@ -1,0 +1,8 @@
+(()=>{'use strict';
+const blockedExt=new Set(['url','lnk','exe','com','bat','cmd','msi','scr','ps1','vbs','js','jar']);
+function filenameFromChip(chip){const t=(chip?.textContent||'').replace(/×\s*$/,'').trim();return t.replace(/^📎\s*/,'').replace(/\s+\d+(?:[.,]\d+)?\s*(?:B|KB|MB).*$/i,'').trim();}
+function badFiles(container){const root=document.getElementById(container);if(!root)return[];return [...root.querySelectorAll('.kcatt-chip')].map(filenameFromChip).filter(Boolean).filter(n=>{const m=n.toLowerCase().match(/\.([a-z0-9]+)$/);return m&&blockedExt.has(m[1]);});}
+function blockIfNeeded(ev,container){const bad=badFiles(container);if(!bad.length)return false;ev.preventDefault();ev.stopImmediatePropagation();alert('Dieser Anhang kann nicht als E-Mail-Anhang verschickt werden:\n\n'+bad.join('\n')+'\n\nDie Datei ist ein Windows-Link/Programmdatei oder ein gesperrtes Format. Bitte die echte Datei auswählen, z. B. PDF, DOCX, XLSX, JPG oder PNG.');return true;}
+document.addEventListener('click',ev=>{const b=ev.target.closest?.('#sendBtn,#kcSeriesSend');if(!b)return;blockIfNeeded(ev,b.id==='kcSeriesSend'?'kcSeriesAttList':'kcComposeAttList');},true);
+const mo=new MutationObserver(()=>{const box=document.getElementById('kcAttachmentBox');if(box&&!box.querySelector('.kc-attachment-format-note')){const p=document.createElement('div');p.className='mini kc-attachment-format-note';p.textContent='Hinweis: Windows-Verknüpfungen (.url/.lnk) und Programmdateien können nicht als E-Mail-Anhang versendet werden. Bitte die echte Datei auswählen.';box.appendChild(p);}});mo.observe(document.documentElement,{childList:true,subtree:true});
+})();
