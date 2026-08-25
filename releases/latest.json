@@ -1,13 +1,13 @@
 {
   "app": "KC Communication",
-  "version": "0.4.9",
+  "version": "1.0.0",
   "channel": "public",
-  "publishedAt": "2026-08-25T07:12:00+02:00",
+  "publishedAt": "2026-08-25T13:00:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
-  "rollbackVersion": "0.4.8",
+  "rollbackVersion": "0.4.9",
   "estimatedInstallSeconds": 4,
-  "notes": "Aktueller Stand 0.4.9. Update-Prüfung konsolidiert: Ist bereits 0.4.9 geladen, erscheint nur noch der Hinweis 'KC Communication 0.4.9 ist auf dem aktuellen Stand.' Kein erneutes Installationsfenster und kein Freeze. Traffic-LEDs bleiben im Ruhezustand grau und flackern bei echtem Datenverkehr gelb.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/index-049-fixed.html?v=0.4.9&fixed=2"
+  "notes": "KC Communication 1.0.0: Professional Core mit Journal, serverseitigem Scheduler, Empfängergruppen, Vorlagen, Retry/Failover, Duplikatschutz, Zustell-/Bestätigungsstatus, Audit, Health-Monitor, Anhängen, Datei-Explorer und Excel/CSV-Serienmail. Update-Prüfung ist freeze-sicher: läuft bereits 1.0.0, erscheint nur 'KC Communication 1.0.0 ist auf dem aktuellen Stand.' und kein Installationsdialog.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/v1/?v=1.0.0"
 }
