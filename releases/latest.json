@@ -2,12 +2,12 @@
   "app": "KC Communication",
   "version": "0.4.9",
   "channel": "public",
-  "publishedAt": "2026-08-25T07:05:00+02:00",
+  "publishedAt": "2026-08-25T07:12:00+02:00",
   "mandatory": false,
   "packageReady": true,
   "installMode": "web-reload",
   "rollbackVersion": "0.4.8",
   "estimatedInstallSeconds": 4,
-  "notes": "Tiefenkonsolidierung der Statusanzeige: inaktive Traffic-LEDs sind vollständig unsichtbar und erscheinen nur bei echtem Datenverkehr. Rundinstrument-Diagnose erhält wieder eine Klartextbewertung je Messwert: Sehr schnell, Schnell, Normal, Langsam oder Sehr langsam. Update-Installation korrigiert: direkter cache-sicherer Sprung auf die 0.4.9-Release-Datei.",
-  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/index-049.html?v=0.4.9&install=1"
+  "notes": "Aktueller Stand 0.4.9. Update-Prüfung konsolidiert: Ist bereits 0.4.9 geladen, erscheint nur noch der Hinweis 'KC Communication 0.4.9 ist auf dem aktuellen Stand.' Kein erneutes Installationsfenster und kein Freeze. Traffic-LEDs bleiben im Ruhezustand grau und flackern bei echtem Datenverkehr gelb.",
+  "releaseUrl": "https://sire65.github.io/KC-Communication-Public/index-049-fixed.html?v=0.4.9&fixed=2"
 }
