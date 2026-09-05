@@ -1,4 +1,16 @@
-self.addEventListener('push',event=>{let d={};try{d=event.data?event.data.json():{}}catch{d={body:event.data?event.data.text():''}}const title=d.title||'KC Communication';const options={body:d.body||d.message||'Neue Nachricht',icon:d.icon||'./icon-192.png',badge:d.badge||'./icon-192.png',data:d.data||{url:d.url||'./'},tag:d.tag||'kc-communication',renotify:true};event.waitUntil(self.registration.showNotification(title,options))});self.addEventListener('notificationclick',event=>{event.notification.close();const url=event.notification.data?.url||'./';event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(list=>{for(const c of list){if('focus'in c){c.navigate?.(url);return c.focus()}}return clients.openWindow?clients.openWindow(url):undefined}))});
+/* Uebernahme sofort: ohne skipWaiting bliebe eine neue Fassung im Zustand
+   "waiting", solange noch irgendein Fenster der Anwendung offen ist. Genau
+   deshalb wirkte eine Aenderung am Service Worker bisher erst Tage spaeter. */
+self.addEventListener('install',e=>{e.waitUntil(self.skipWaiting())});
+self.addEventListener('activate',e=>{e.waitUntil(self.clients.claim())});
+/* Rueckmeldung, ob eine Meldung wirklich angezeigt bzw. geoeffnet wurde. Ohne
+   sie sagt das Protokoll nur "an den Push-Dienst uebergeben" - was am Geraet
+   ankommt, bleibt unsichtbar. Der Endpunkt ist absichtlich ohne Anmeldung
+   erreichbar und nimmt nur eine Auftrags-ID und einen Zustand entgegen. */
+const KC_QUITTUNG='https://ptblnpiroqftcvlsrhac.supabase.co/functions/v1/kc-communication-push-receipt';
+function kcQuittung(daten,zustand){const id=daten&&daten.requestId;if(!id)return Promise.resolve();
+  return fetch(KC_QUITTUNG,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({requestId:id,state:zustand})}).catch(()=>{})}
+self.addEventListener('push',event=>{let d={};try{d=event.data?event.data.json():{}}catch{d={body:event.data?event.data.text():''}}const title=d.title||'KC Communication';const options={body:d.body||d.message||'Neue Nachricht',icon:d.icon||'./icon-192.png',badge:d.badge||'./icon-192.png',data:d.data||{url:d.url||'./'},tag:d.tag||'kc-communication',renotify:true};event.waitUntil(self.registration.showNotification(title,options).then(()=>kcQuittung(options.data,'displayed')))});self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil(kcQuittung(event.notification.data,'opened'));const url=event.notification.data?.url||'./';event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(list=>{for(const c of list){if('focus'in c){c.navigate?.(url);return c.focus()}}return clients.openWindow?clients.openWindow(url):undefined}))});
 
 /* Selbsterneuerung der Push-Anmeldung.
    Ein Browser tauscht die Zustelladresse von sich aus aus und kuendigt das mit
